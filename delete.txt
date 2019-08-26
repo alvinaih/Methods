@@ -1,0 +1,17 @@
+
+			mc.StudentNo = txtStudentNo.Text;
+
+			bool success = mc.Delete(mc);
+
+			if (success)
+			{
+				MessageBox.Show("You have successfully Deleted a student");
+			}
+			else
+			{
+				MessageBox.Show("You were not able to delete the student.");
+			}
+
+			//Load the data on the DataGridView
+			DataTable dt = mc.Select();
+			dgvStudentList.DataSource = dt;
